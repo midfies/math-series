@@ -6,9 +6,8 @@ def fib(num):
     if num == 0:
         return 0
     elif num == 1:
-        return num
-    else:
-        return fib(num - 1) + fib(num - 2)
+        return 1
+    return sum_series(num - 1) + sum_series(num - 2)
 
 
 def lucas(num):
@@ -28,12 +27,11 @@ def lucas_rec(num):
         return 2
     elif num == 1:
         return 1
-    else:
-        return lucas_rec(num - 1) + lucas_rec(num - 2)
+    return sum_series(num - 1, 2, 1) + sum_series(num - 2, 2, 1)
 
 
 def sum_series(num, x=0, y=1):
-    '''Return a numbers based on 2 starting numbers in a string of numbers.'''
+    """Return a numbers based on 2 starting numbers in a string of numbers."""
     if num == 0:
         return x
     elif num == 1:

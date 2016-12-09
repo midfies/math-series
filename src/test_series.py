@@ -24,6 +24,12 @@ LUCAS_PARAMS_TABLE = [
     [7, 29],
 ]
 
+SUM_SERIES_TABLE = [
+    [0, 2, 1, 2],
+    [5, 2, 1, 11],
+    [2, 5, 2, 7],
+]
+
 
 @pytest.mark.parametrize("n, results", PARAMS_TABLE)
 def test_fib_0(n, results):
@@ -51,19 +57,8 @@ def test_sum_series_5():
     assert sum_series(5) == 5
 
 
-def test_sum_series_0_2_1():
-    """Return 0 when  called with 0,2,1."""
+@pytest.mark.parametrize("n, x, y, results", SUM_SERIES_TABLE)
+def test_sum_series(n, x, y, results):
+    """Return 2 when  called with 0,2,1."""
     from series import sum_series
-    assert sum_series(0, 2, 1) == 2
-
-
-def test_sum_series_5_2_1():
-    """Return 11 when  called with 5,2,1."""
-    from series import sum_series
-    assert sum_series(5, 2, 1) == 11
-
-
-def test_sum_series_2_5_2():
-    """Return 7 when called with 2,5,2."""
-    from series import sum_series
-    assert sum_series(2, 5, 2) == 7
+    assert sum_series(n, x, y) == results
