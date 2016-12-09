@@ -36,8 +36,7 @@ def sum_series(num, x=0, y=1):
         return x
     elif num == 1:
         return y
-    else:
-        return sum_series(num - 1, x, y) + sum_series(num - 2, x, y)
+    return sum_series(num - 1, x, y) + sum_series(num - 2, x, y)
 
 
 if __name__ == "__main__":
